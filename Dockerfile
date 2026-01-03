@@ -1,5 +1,5 @@
-# Use Python 3.11 official image
-FROM python:3.11-slim
+# Use Python 3.12 official image (required for Django 6.0)
+FROM python:3.12-slim
 
 # Set environment variables
 ENV PYTHONUNBUFFERED=1 \
