@@ -34,4 +34,4 @@ EXPOSE 8000
 CMD python manage.py migrate && \
     python manage.py createsu && \
     python manage.py load_crime_data data/state_crime.csv || true && \
-    gunicorn rest_api.wsgi --bind 0.0.0.0:8000 --log-file -
+    gunicorn rest_api.wsgi --bind 0.0.0.0:${PORT:-8000} --log-file -
