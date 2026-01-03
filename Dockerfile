@@ -32,6 +32,6 @@ EXPOSE 8000
 
 # Run the application
 CMD python manage.py migrate && \
-    python manage.py createsuperuser --noinput || true && \
+    python manage.py createsu && \
     python manage.py load_crime_data data/state_crime.csv || true && \
     gunicorn rest_api.wsgi --bind 0.0.0.0:8000 --log-file -
